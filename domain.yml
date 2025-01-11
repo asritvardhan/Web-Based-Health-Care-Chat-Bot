@@ -1,0 +1,497 @@
+version: "3.1"
+
+entities:
+  - weight
+  - height
+  - health_problem
+  - location
+
+actions:
+  - action_calculate_bmi
+  - action_fetch_health_news
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - how_to_use
+  - list_of_problems
+  - what_can_you_do
+  - no_symptom
+  - solution_true
+  - information_correct
+  - side_effects
+  - created_by
+  - uses
+  - how_are_you
+  - fine
+  - not_fine
+  - chicken_pox
+  - cough
+  - dry_cough
+  - wet_cough
+  - low_concentration
+  - arid
+  - eye_cancer
+  - food_poisoning
+  - flu
+  - fever
+  - yellow_fever
+  - whooping_cough
+  - folate_deficiency_anemia
+  - hypoglycemia
+  - high_cholesterol
+  - high_bp
+  - hyperhydrosis
+  - huntington
+  - hearing_loss
+  - sleeplessness
+  - iron_deficiency_anemia
+  - bone_cancer
+  - bronchitis
+  - kidney_disease
+  - constipation
+  - dehydration
+  - headache
+  - indigestion
+  - diarrhoea
+  - kidney_stones
+  - leg_cramps
+  - migraine
+  - obesity
+  - tooth_decay
+  - ulcer
+  - vomiting
+  - restless_leg_syndrome
+  - sore_throat
+  - stomach_ache
+  - tooth_ache
+  - anxiety
+  - calculate_bmi
+  - request_health_news
+
+responses:
+  utter_greet:
+  - text: " Hi,welcome to the FIT HEALTH BOT this is a chat bot that give remedies to your health problems. 
+  May I know from which health problem you are suffering?
+  these are some examples: 
+   examples :1 low bp
+   2 i am having low bp
+   3 i am suffering with low bp"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a health bot. I give remedies to your health problems"
+
+
+  utter_how_to_use:
+    - text: "Just enter your health issue (low blood pressure, for example).I'll explain the remedy."
+
+  utter_list_of_problems:
+    - text: "1.dry cough
+    2.wet cough
+    3.arid
+    4.eye cancer
+    5. food poisoning
+    6.flu
+    7.fever
+    8.yellow fever
+    9. whooping cough
+    10. folate deficiency anemia
+    11. high cholesterol
+    12. hyperhydrosis
+    13. huntington
+    14. heart failure
+    15.insomnia
+    16. iron deficiency anemia.
+    17. bone cancer.
+    18. bronchitis.
+    19. kidney disease.
+    20.dehydration.
+    21. indigestion
+    22. diarrhoea
+    23.leg cramps.
+    24. migraine.
+    25. tooth decay.
+    26. vomiting.
+    27. restless leg  syndrome
+    28. sore throat 
+    29.stomach ache.
+    30. tooth ache.
+    31. hypoglycemia(low bp).
+    32. hyperglycemia(high bp).
+    33. hearing loss.
+    34.constipation.
+    35.headache.
+    36.kidney stones.
+    37.obesity.
+    38.ulcer
+"
+  utter_what_can_you_do:
+    - text: "I can provide basic assistance or suggest a solution for your health issue."
+
+  utter_no_symptom:
+    - text: "That's okay. Feel free to return if you have any health concerns in the future."
+
+  utter_solution_true:
+    - text: "The information provided here is sourced from reliable sources and aims to offer helpful guidance."
+
+  utter_information_correct:
+    - text: "The information is gathered from credible sources, which you can verify for accuracy."
+
+  utter_side_effects:
+    - text: "While we strive for accuracy, there might be occasional errors. We apologize for any inconvenience."
+
+  utter_created_by:
+    - text: "This chatbot was developed by students from MLRIT CSM C: A. Anjan, G. Asrit Vardhan, I. Varshik, K. Gowtham, and L. SRISHANTH REDDY."
+
+  utter_uses:
+    - text: "We've made it easier for you to get basic solutions for your health problems instead of searching on Google."
+
+  utter_how_are_you:
+    - text: "I'm a bot, so I'm always fine! How about you?"
+
+  utter_fine:
+    - text: "That's great to hear! Remember, I'm here to help if you ever feel unwell."
+
+  utter_not_fine:
+    - text: "If you're feeling unwell, let me know your symptoms, and I'll try to assist you."
+
+  utter_chicken_pox:
+    - text: "It seems you have chickenpox. Try these remedies:
+     1. Avoid scratching.
+     2. Drink plenty of water. 
+     3. Consume foods high in vitamin C, such as watermelons, oranges, and lemons."
+
+  utter_cough:
+    - text: "You're coughing, alright? Is it a dry or wet cough?"
+
+  utter_dry_cough:
+    - text: '''
+      I understood that you are suffering from dry cough, so I recommend you to follow the given tips to help you recover.
+      
+      Remedies:
+      - Inhale steam from a bowl of hot water or take a hot shower.
+      - Gargle with warm salt water (1/2 teaspoon of salt in a glass of warm water).
+
+      Diet:
+      - Drink ginger tea (Ginger has anti-inflammatory properties that can help soothe the throat).
+      - Drink warm liquids like broths.
+
+      Foods to avoid:
+      - Spicy foods
+      - Acidic foods (like citrus fruits)
+      - Dairy products
+
+      Description: These foods can irritate the throat and worsen a dry cough.
+
+      Exercise/Yoga:
+      - Try doing mountain pose (tadasana)
+      - Standing forward bend variation (uttanasana)
+
+      These will help you to get rid of dry cough.
+'''
+
+  utter_wet_cough:
+    - text: "I understood that you are suffering from wet cough, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Inhale steam from a bowl of hot water or take a hot shower. Gargle with warm salt water (1/2 teaspoon of salt in a glass of warm water). 
+      Diet:
+      Drink warm liquids like broths. Eat pineapple and leafy vegetables(these foods have anti-inflammatory glands that reduce mucus production).
+      Foods to Avoid:
+      Avoid dairy products and sugar foods.(these will increase mucus production)
+      Exercise/Yoga:
+      Sit firmly on a chair, raise your arms over your head, and inhale deeply before bending forward to cough. Repeat this process a few times
+
+"
+
+  utter_low_concentration:
+    - text: "It appears you have low concentration power. Try these steps to improve it: 
+     1. Meditate daily for 10-15 minutes.
+     2. Include green tea, leafy vegetables, and chocolate in your diet. 
+     3. Practice yoga poses like Tadasana and Balasana to enhance focus and concentration."
+
+  utter_arid:
+    - text: "So you're dealing with arid. Follow these remedies to manage it: 
+    1. Avoid excessive drinking. 
+    2. Limit alcohol intake to 14 units per week."
+
+  utter_eye_cancer:
+    - text: "I understand you're facing eye cancer. To reduce its impact, follow these steps: 
+    1. Limit exposure to sunlight. 
+    2. Consume leafy vegetables and vitamin C-rich foods. 
+    3. Engage in regular exercise for at least 150 minutes per week."
+
+  utter_food_poisoning:
+    - text: "I understood that you are suffering from food poisoning, So I recommend you to follow the given tips to help to you recover.
+      Diet:
+      Drink plenty of fluids like water and clear broths.
+      Eat food items like bananas, rice and boiled potatoes to ease digestion.
+      Foods to Avoid:
+      Avoid eating dairy products and fatty foods(fast foods,processed meats etc).
+      Exercise/Yoga:
+      Allow your body to recover by avoiding strenuous activities."
+
+  utter_flu:
+    - text: "It seems you have the flu. Consider these steps for relief:
+      1. Stay hydrated by drinking plenty of water.
+      2. Have broth and foods rich in vitamin C and D. 
+      3. Avoid strenuous exercise."
+
+  utter_fever:
+    - text: "I understood that you are suffering from fever, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Place a cold pack over your head and take a few minutes to unwind.
+      Diet:
+      To keep your blood sugar levels steady, I advise you to consume foods high in magnesium, such as spinach, almonds, and pumpkin seeds, as well as balanced meals that include vegetables and fruits.
+      To stay hydrated, stay away from items like cheese, processed meat, and alcohol and drink lots of water.
+      Yoga/exercise:
+      I suggest performing shoulder rolls, neck stretches, child's pose, and savasana.
+
+"
+  utter_yellow_fever:
+    - text: "It seems you have yellow fever. Follow these steps to recover: 
+      1. Stay hydrated to aid recovery. 
+      2. Consume fresh fruits, vegetables, nuts, and herbal tea. 
+      3. Avoid outdoor exercises."
+
+  utter_whooping_cough:
+    - text: "If you're experiencing whooping cough, try these remedies: 
+      1. Drink hot water or honey water. 
+      2. Have ginger tea or turmeric milk."
+
+  utter_folate_deficiency_anemia:
+    - text: "It appears you have folate deficiency anemia. Consider these steps to address it: 
+      1. Include meat, egg yolk, and milk in your diet. 
+      2. Engage in regular workouts like running or walking."
+
+  utter_hypoglycemia:
+    - text: "It seems you have low blood pressure (hypoglycemia). Follow these steps: 
+      1. Follow the 15-15 rule (eat 15g of carbohydrates and check blood sugar after 15 min). 
+      2. Consume bananas, apples, milk, honey, and fruit juice. 
+      3. Do anaerobic exercises like high-intensity interval training (HIIT)."
+
+  utter_high_cholesterol:
+    - text: "I understood that you are suffering from high cholesterol, So I recommend you to follow the given tips to help to you recover.
+      Diet:
+      include oats and barley in your diet.Eat fatty fishes and include nuts and seeds in your diet.
+      Exercise/Yoga:
+      Engage in cardiovascular exercises like brisk walking, jogging, cycling, or swimming."
+
+  utter_high_bp:
+    - text: "I understood that you are suffering from high bp, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Practice deep breathing exercises.
+      Diet:
+      eat foods rich in potassium like bananas, oranges and spinach and magnesium rich foods like leafy green vegetables and whole grains.
+      Exercise/Yoga:
+      Engage in regular aerobic exercises like walking,cycling,or swimming."
+
+  utter_hyperhydrosis:
+    - text: "It appears you have hyperhidrosis. Consider these steps to reduce it: 
+      1. Stay hydrated by drinking water. 
+      2. Consume water-dense fruits and vegetables, along with calcium-rich foods like low-fat milk, cheese, almonds, and spinach. 
+      3. Reduce heavy workouts."
+
+  utter_huntington:
+    - text: "If you're worried about Huntington's disease, follow these steps: 
+      1. Choose soft foods that are easy to swallow. 
+      2. Add gravies and sauces to your meals. 
+      3. Engage in aerobic activities for 150 minutes a week."
+
+  utter_heart_failure:
+    - text: "It seems you have heart failure. Consider these steps to reduce the risk: 
+      1. Eat fresh fruits, vegetables, and foods low in salt. 
+      2. Engage in stationary cycling, walking, and aerobics."
+
+  utter_hearing_loss:
+    - text: "If you're experiencing hearing loss, try these remedies to improve your hearing: 
+      1. Eat fish, legumes, bananas, and dark chocolate. 
+      2. Practice sound therapy and focus through meditation."
+  utter_sleeplessness:
+    - text: "I understood that you are suffering from insomnia, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Create a consistent sleep schedule and avoid mobile usage prior 1hr before going to bed.
+      Diet:
+      Eat foods like leafy vegetables, bananas, nuts, seeds and dairy products
+      Foods to Avoid:
+      Avoid foods that contain caffeine like coffee,tea and dont take heavy meals in the evening.
+      Exercise/Yoga:
+      Practice Child's Pose (Balasana) to relax."
+
+  utter_iron_deficiency_anemia:
+    - text: "If you're experiencing iron deficiency anemia, consider these steps to address it:
+      1. Include leafy vegetables, iron-fortified cereals, bread, and poultry in your diet.
+      2. Engage in regular exercises like running, walking, and swimming."
+
+  utter_bone_cancer:
+    - text: "If you're concerned about bone cancer, consider the following remedy:
+      1. Undergo chemotherapy."
+
+  utter_bronchitis:
+    - text: "If you're dealing with bronchitis, follow these remedies:
+      1. Avoid smoking.
+      2. Drink plenty of water."
+
+  utter_kidney_disease:
+    - text: "If you have kidney disease, try these remedies:
+      1. Avoid drinking alcohol.
+      2. Include butter, ghee, peas, and meat in your diet.
+      3. Engage in 150 minutes of cardio, cycling, and walking every week."
+
+  utter_constipation:
+    - text: "I understood that you are suffering from constipation, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Drink 1-2 glasses of lukewarm water after waking up.
+      Diet:
+      Eat food that has rich fibre like whole grains,vegetables(carrots,cauliflower,bitter gourd), beans, apples and oranges etc.
+      Foods to avoid:
+      Dont eat red meat and dairy products.
+      Exercise/Yoga:
+      Practice yoga asanas like Malasana, Madukasana, and Butterfly Pose"
+
+  utter_dehydration:
+    - text: "If you're experiencing dehydration, try these remedies:
+      Drink plenty of fluids like water, diluted juices, and squash."
+
+  utter_headache:
+    - text: "I understood that you are suffering from headache, So I recommend you to follow the given tips to help to you recover.\n
+      Remedies:
+      Keep a cold pack on your head and relax for some time.\n
+      Diet:\n
+      I recommend you to take magnesium rich foods like spinach, almonds, pumpkin seeds, eat balanced meals with vegetables and eat fruits to maintain stable blood sugar levels.\n
+      Drink plenty of water to stay hydrated\n
+      Avoid foods like cheese,processed meat and alcohol.\n
+      Yoga/exercise:\n
+      I recommend you to do neck stretches and shoulder rolls and practice child's pose and do savasana."
+
+  utter_indigestion:
+    - text: "If you're experiencing indigestion, try these remedies:
+      1. Eat whole grains like oatmeal and brown rice.
+      2. Engage in walking, yoga, and light jogging."
+
+  utter_leg_cramps:
+    - text: "If you're experiencing leg cramps, try these remedies to reduce them:
+      1. Stay hydrated by drinking coconut water.
+      2. Eat fruits like avocado, watermelon, and papaya.
+      3. Stretch your legs against the wall for 5 minutes."
+
+  utter_diarrhoea:
+    - text: "If you're suffering from diarrhea, try these remedies:
+      Eat high potassium foods like bananas, potatoes, and fruit juice."
+
+  utter_kidney_stones:
+    - text: "If you have kidney stones, try these remedies:
+      1. Drink plenty of fluids, particularly water.
+      2. Consume foods with less salt and more calcium, like milk and oranges.
+      3. Lie on your back, bring both knees close to your chest while inhaling deeply, and then exhale slowly."
+
+  utter_migraine:
+    - text: "I understood that you are suffering from migraine, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Apply cold compress practice relation techniques like breathing , meditation and do massage therapy.
+      Diet:
+      Eat leafy vegetables like spinach, fruits like watermelon, banana, and avocado, and pumpkin seeds.
+      Foods to Avoid:
+      Certain foods like chocolates and coffee may trigger migraine.
+      Exercise/yoga:
+      Perform low impact exercise like waking or do gentle yoga and do meditation."
+
+  utter_obesity:
+    - text: "If you're suffering from obesity, try these remedies: 
+      1. Avoid excess processed foods and beverages.
+      2. Eat whole grains, vegetables, and nuts.
+      3. Consider exercises like wall push-ups, hip swirls, and dumbbell side bends."
+
+  utter_tooth_decay:
+    - text: "If you're suffering from tooth decay, try these remedies:
+      1. Avoid drinking cold water.
+      2. Consume foods rich in calcium and phosphate, like milk and cheese.
+      3. Practice proper brushing and flossing."
+  utter_ulcer:
+    - text: "I understood that you are suffering from ulcer, So I recommend you to follow the given tips to help to you recover.
+      Diet:
+      Take raw honey(it helps in growth of hpylori bacteria which will reduce ulcer). take high fibre foods like whole grains,fruits(oranges,bananas,apple) and vegetables(carrot,spinach).
+      Exercise/Yoga:
+      Perform gentle stretching exercises"
+
+  utter_vomiting:
+    - text: "If you're experiencing vomiting, try these remedies:
+      1. Avoid oily and spicy foods that are hard to digest.
+      2. Consume bananas, rice, and dry toast.
+      3. Perform pursed lip breathing exercises: exhale through your mouth with your lips pursed in a whistling position, allowing your belly to fall back inward. Repeat 10 times."
+
+  utter_restless_leg_syndrome:
+    - text: "If you're suffering from restless leg syndrome, try these remedies:
+      1. Rest frequently.
+      2. Include a variety of fresh fruits and vegetables in your diet and consume iron-rich foods like meat.
+      3. Aim for 30-60 minutes of regular exercise per day, avoiding activities that strain your joints."
+
+  utter_sore_throat:
+    - text: "If you have a sore throat, try these remedies:
+      1. Use a vaporizer, especially while sleeping, to keep the air moist.
+      2. Consider consuming chicken soup, oatmeal, or hot ginger tea with honey.
+      3. Gargle with salt water."
+
+  utter_stomach_ache:
+    - text: "I understood that you are suffering from stomach ache, So I recommend you to follow the given tips to help to you recover.
+      Diet:
+      Consume easily digestible foods like rice, boiled potatoes and fruits like bananas.
+      Foods to Avoid:
+      Avoid foods like meat and spicy food.
+      Exercise/Yoga:
+      Lie down with your knees bent, arms at your sides, and feet flat on the floor. Lift your head and shoulders while raising your arms to about
+      thigh level. Hold for 6 seconds, then relax. Repeat 8 to 12 times."
+
+  utter_tooth_ache:
+    - text: "If you're suffering from a toothache, try these remedies:
+      1. Avoid consuming excessively cold items.
+      2. Consider eating oatmeal, soups, soft cheese, and meatloaf.
+      3. Perform exercises like resisted mouth closing, resisted mouth opening, forward jaw movement, and chin tucks."
+
+  utter_anxiety:
+    - text: "I understood that you are suffering from anxiety, So I recommend you to follow the given tips to help to you recover.
+      Remedies:
+      Practice progressive muscle relaxation and engage in mindfulness mediation
+      Diet:
+      Eat a balanced diet rich in whole foods fruits(berries,bananas,oranges) and vegetables(leafy vegetables and tomatoes).
+      Exercise/Yoga:
+      Try practicing halasana (plow pose) to help alleviate symptoms."
+
+  utter_regular_exercise:
+    - text: "Regular exercises include:
+      1. Walking
+      2. Running
+      3. Swimming
+      4. Climbing stairs
+      And more."
+
+  utter_ask_weight:
+    - text: "What is your weight in kilograms?"
+
+  utter_ask_height:
+    - text: "What is your height in meters?"
+
+
+  utter_ask_health_problem:
+    - text: "please specify a health topic that you are interested in"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
