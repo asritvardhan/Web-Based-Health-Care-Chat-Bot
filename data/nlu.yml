@@ -1,0 +1,819 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: how_to_use
+  examples: |
+    - help
+    - i need help
+    - i dont know how to use
+    - help me
+    - can you help me
+    - i want some help
+    - how to interact
+    - how to communicate
+
+- intent: list_of_problems
+  examples: |
+    - how many health problems you know
+    - what health problems you know
+    - list of health problems
+    - list of problems
+    - health problems
+
+- intent: what_can_you_do
+  examples: |
+    - what can you do
+    - what you can do
+    - what you do
+    - use
+    - is there any use
+    - what is the use
+    - whats the use
+
+- intent: no_symptom
+  examples: |
+    - i dont have any symptoms
+    - no symptom
+    - i dont have any symptoms
+    - i dont have a symptom
+    - i dont have any symptoms
+    - no symptoms
+
+- intent: solution_true
+  examples: |
+    - is your solution true
+    - solution true
+
+- intent: information_correct
+  examples: |
+    - is the information correct
+    - is information true
+
+- intent: side_effects
+  examples: |
+    - does it have any side effects
+    - any side effects
+    - side effects
+    - any problems if we use this
+- intent: created_by
+  examples: |
+    - who created this bot
+    - created by
+    - who developed this
+    - who did this
+    - who created you?
+
+- intent: uses
+  examples: |
+    - why it is used
+    - why should we use
+    - what us its use
+
+- intent: how_are_you
+  examples: |
+    - how are you
+    - hw r u
+
+- intent: fine
+  examples: |
+    - i am fine
+    - fine
+    - good
+    - doing well
+
+- intent: not_fine
+  examples: |
+    - i am not fine
+    - not fine
+    - not feeling well
+    - not good
+    - feeling sick
+
+- intent: chicken_pox
+  examples: |
+    - chicken pox
+    - pox
+    - I am having chicken pox
+    - I have chicken pox
+    - how to treat chicken pox
+    - treatment for chicken pox
+    - how to cure chicken pox
+    - chicken pox remedy
+    - can chicken pox be cured
+    - preventing chicken pox
+    - chicken pox
+
+- intent: cough
+  examples: |
+    - cough
+    - i am having cough
+    - i have cough
+    - i am suffering from cough
+    - daggu
+    - i am suffering with cough
+    - I am suffering with cough
+    - I have a cough
+    - I am coughing
+    - persistent cough
+    - chronic cough
+    - severe cough
+    - dry cough
+    - wet cough
+    - cough remedy
+    - how to treat cough
+    - cough medicine
+    - what to do for a cough
+    - home remedies for cough
+    - how to stop coughing
+    - reasons for cough
+    - causes of cough
+    - coughing a lot
+    - cough won't go away
+    - how to get rid of a cough
+    - treatment for persistent cough
+
+- intent: dry_cough
+  examples: |
+    - dry cough
+    - dry
+    - I am having dry cough
+    - I have dry cough
+    - I am suffering with dry cough
+    - I am suffering from dry cough
+    - I have a dry cough
+    - persistent dry cough
+    - chronic dry cough
+    - severe dry cough
+    - dry cough remedy
+    - how to treat dry cough
+    - dry cough medicine
+    - what to do for a dry cough
+    - home remedies for dry cough
+    - how to stop dry coughing
+    - reasons for dry cough
+    - causes of dry cough
+    - dry cough won't go away
+    - how to get rid of a dry cough
+    - treatment for persistent dry cough
+
+- intent: wet_cough
+  examples: |
+    - wet
+    - wet cough
+    - I am having wet cough
+    - I have wet cough
+    - I am suffering from wet cough
+    - I am suffering with wet cough
+    - I am suffering from
+    - I have a wet cough
+    - persistent wet cough
+    - chronic wet cough
+    - severe wet cough
+    - wet cough remedy
+    - how to treat wet cough
+    - wet cough medicine
+    - what to do for a wet cough
+    - home remedies for wet cough
+    - how to stop wet coughing
+    - reasons for wet cough
+    - causes of wet cough
+    - wet cough won't go away
+    - how to get rid of a wet cough
+    - treatment for persistent wet cough
+
+- intent: low_concentration
+  examples: |
+    - low concentration power
+    - i have low concentration power
+    - i am having low concentration power
+    - i am suffering from low concentration power
+    - i am suffering with low concentration power
+    - bad memory
+    - i am having bad memory power
+    - i am suffering with bad memory power
+    - i am suffering from bad memory power
+
+- intent: arid
+  examples: |
+    - arid
+    - A rid
+    - a rid
+    - a-rid
+    - i am having a-rid
+    - i am having arid
+    - i have arid
+    - i have a-rid
+    - i am suffering with a-rid
+    - i am suffering from arid
+    - i am suffering from a-rid
+    - i am suffering with arid
+
+- intent: eye_cancer
+  examples: |
+    - i am having eye cancer
+    - i have eye cancer
+    - eye cancer
+    - EYE  CANCER
+    - eyecancer
+    - i am suffering with eye cancer
+    - i am suffering from eye cancer
+
+- intent: food_poisoning
+  examples: |
+    - I am having food poisoning
+    - I have food poisoning
+    - food poisoning
+    - FOOD POISONING
+    - FOODPOISONING
+    - foodpoisoning
+    - I am suffering from food poisoning
+    - I am suffering with food poisoning
+    - symptoms of food poisoning
+    - food poisoning symptoms
+    - food poisoning treatment
+    - how to treat food poisoning
+    - remedies for food poisoning
+    - food poisoning causes
+    - what causes food poisoning
+    - food poisoning recovery
+    - food poisoning prevention
+    - signs of food poisoning
+    - how long does food poisoning last
+
+- intent: flu
+  examples: |
+    - i am having flu
+    - i have flu
+    - flu
+    - FLU
+    - flue
+    - FLUE
+    - i am suffering with flu
+    - i am suffering from flu
+
+- intent: fever
+  examples: |
+    - I have fever
+    - I am having fever
+    - fever
+    - FEVER
+    - I am suffering with fever
+    - I am suffering from fever
+    - I have a fever
+    - high fever
+    - low fever
+    - fever symptoms
+    - fever treatment
+    - how to reduce fever
+    - causes of fever
+    - what causes fever
+    - how to treat fever
+    - fever medicine
+    - persistent fever
+    - fever won't go away
+    - how to get rid of a fever
+    - remedies for fever
+
+- intent: yellow_fever
+  examples: |
+    - yellowfever
+    - YELLOW FEVER
+    - i am having yellow fever
+    - i have yellow fever
+    - i am suffering with yellow fever
+    - i am suffering from yellow fever
+    - yellow fever
+
+- intent: whooping_cough
+  examples: |
+    - whooping cough
+    - WHOOPING COUGH
+    - WHOOPINGCOUGH
+    - i am having whooping cough
+    - i have whooping cough
+    - i am suffering with whooping cough
+    - i am suffering from whooping
+    - whoopingcough
+
+- intent: folate_deficiency_anemia
+  examples: |
+    - folatedeficiencyanemia
+    - i am having folate deficiency anemia
+    - i have folate deficiency anemia
+    - i am suffering with folate deficiency anemia
+    - i am suffering from folate deficiency anemia
+    - folate deficiency anemia
+
+- intent: hypoglycemia
+  examples: |
+    - HYPOGLYCEMIA
+    - low blood sugar
+    - I have hypoglycemia
+    - I am having hypoglycemia
+    - hypoglycemia symptoms
+    - hypoglycemia treatment
+    - how to treat hypoglycemia
+    - remedies for hypoglycemia
+    - how to prevent hypoglycemia
+    - hypoglycemia diet
+    - low bp
+    - I am having low bp
+    - I have low bp
+    - I have low blood pressure
+    - I am having low blood pressure
+    - I am suffering from low bp
+    - I am suffering with low bp
+    - low blood pressure
+    - low blood pressure treatment
+    - how to treat low bp
+    - remedies for low bp
+    - how to prevent low bp
+    - hypoglycemia
+
+- intent: high_cholesterol
+  examples: |
+    - high cholesterol
+    - HIGH CHOLESTEROL
+    - I am having high cholesterol
+    - I have high cholesterol
+    - I am suffering from high cholesterol
+    - I am suffering with high cholesterol
+    - how to treat high cholesterol
+    - remedies for high cholesterol
+    - how to lower high cholesterol
+    - high cholesterol diet
+    - managing high cholesterol
+    - complications of high cholesterol
+    - high cholesterol levels
+    - reducing high cholesterol
+    - high cholesterol
+
+- intent: high_bp
+  examples: |
+    - HIGH BP
+    - HIGHBP
+    - high blood pressure
+    - I am having high bp
+    - I have high bp
+    - I am suffering from high bp
+    - I am suffering with high bp
+    - high blood pressure symptoms
+    - symptoms of high bp
+    - high blood pressure treatment
+    - how to treat high bp
+    - remedies for high bp
+    - causes of high blood pressure
+    - what causes high bp
+    - how to lower high bp
+    - managing high bp
+    - complications of high blood pressure
+    - high bp levels
+    - high bp
+
+- intent: hyperhydrosis
+  examples: |
+    - HYPERHYDROSIS
+    - hyper hydrosis
+    - i am having hyperhydrosis
+    - i have hyperhydrosis
+    - i am suffering from hyperhydrosis
+    - i am suffering with hyperhydrosis
+    - hyperhydrosis
+    
+
+- intent: huntington
+  examples: |
+    - huntington
+    - i am having huntington
+    - i have huntington
+    - i am suffering from huntington disease
+    - i am suffering with huntington disease
+    - huntington disease
+    
+
+- intent: hearing_loss
+  examples: |
+    - hearing loss
+    - chevudu
+    - chevuti
+    - vinikidi lemi
+    - I am having hearing loss
+    - I have hearing loss
+    - I am suffering with hearing loss
+    - I am suffering from hearing loss
+    - symptoms of hearing loss
+    - hearing loss symptoms
+    - hearing loss treatment
+    - how to treat hearing loss
+    - remedies for hearing loss
+    - causes of hearing loss
+    - what causes hearing loss
+    - managing hearing loss
+    - hearing impairment
+    - difficulty hearing
+    - partial hearing loss
+    - complete hearing loss
+    - hearing loss
+
+- intent: sleeplessness
+  examples: |
+    - sleeplessness
+    - nidra lemi
+    - no sleep
+    - no proper sleep
+    - I am having insomnia
+    - I am having sleeplessness
+    - I have sleeplessness
+    - I am suffering from insomnia
+    - I am suffering from sleeplessness
+    - can't sleep
+    - difficulty sleeping
+    - trouble sleeping
+    - unable to sleep
+    - wakeful nights
+    - I can't sleep
+    - I am unable to sleep
+    - I have trouble in sleeping
+    - I am struggling to sleep
+    - I have insomnia
+    - sleep problems
+    - lack of sleep
+    - restless nights
+    - sleep issues
+    - sleep disorder
+    - chronic insomnia
+    - persistent sleeplessness
+    - severe insomnia
+    - insomnia symptoms
+    - sleeplessness symptoms
+    - insomnia treatment
+    - how to treat insomnia
+    - remedies for insomnia
+    - how to cure insomnia
+    - insomnia help
+    - insomnia
+
+- intent: iron_deficiency_anemia
+  examples: |
+    - iron deficiency anemia
+    - i am having iron deficiency anemia
+    - i have iron deficiency anemia
+    - i am suffering with iron deficiency anemia
+    - i am suffering from iron deficiency anemia
+    - iron deficiency anemia
+
+- intent: bone_cancer
+  examples: |
+    - bone cancer
+    - i am having bone cancer
+    - i have bone cancer
+    - i am suffering from bone cancer
+    - i am suffering with bone cancer
+    - bone cancer
+
+- intent: bronchitis
+  examples: |
+    - i have bronchitis
+    - i am having bronchitis
+    - i am suffering with bronchitis
+    - i am suffering from bronchitis
+    - bronchitis
+
+- intent: kidney_disease
+  examples: |
+    - kidney disease
+    - i am having  kidney disease
+    - i have kidney disease
+    - i am suffering from kidney disease
+    - i am suffering with kidney disease
+    - kidney disease
+
+- intent: constipation
+  examples: |
+    - constipation
+    - malabaddakam
+    - I am having constipation
+    - I have constipation
+    - I am suffering from constipation
+    - I am suffering with constipation
+    - constipated
+    - difficulty passing stool
+    - unable to pass stool
+    - hard stools
+    - bowel movement issues
+    - irregular bowel movements
+    - chronic constipation
+    - severe constipation
+    - constipation symptoms
+    - how to treat constipation
+    - remedies for constipation
+    - constipation
+    - causes of constipation
+    - what causes constipation
+    - how to relieve constipation
+    - constipation relief
+    - managing constipation
+    - constipation problems
+    - constipation issues
+    - trouble with bowel movements
+    - constipation treatment
+
+- intent: dehydration
+  examples: |
+    - I am having dehydration
+    - I have dehydration
+    - I am suffering with dehydration
+    - I am suffering from dehydration
+    - dehydrated
+    - lack of fluids
+    - not enough water
+    - low hydration
+    - symptoms of dehydration
+    - dehydration symptoms
+    - dehydration treatment
+    - how to treat dehydration
+    - remedies for dehydration
+    - causes of dehydration
+    - what causes dehydration
+    - how to prevent dehydration
+    - managing dehydration
+    - severe dehydration
+    - chronic dehydration
+    - dehydration issues
+    - dehydration problems
+    - dehydration relief
+    - hydration issues
+    - need water
+    - feeling dehydrated
+    - dehydration
+
+- intent: headache
+  examples: |
+    - headache
+    - tala noppi
+    - head ache
+    - I have headache
+    - I am having headache
+    - I am suffering with headache
+    - I am suffering from headache
+    - head pain
+    - migraine
+    - severe headache
+    - chronic headache
+    - splitting headache
+    - headache symptoms
+    - headache treatment
+    - how to treat headache
+    - remedies for headache
+    - causes of headache
+    - what causes headache
+    - headache relief
+    - headache issues
+    - headache problems
+    - throbbing head
+    - tension headache
+    - sinus headache
+    - headache discomfort
+    - headache
+
+- intent: indigestion
+  examples: |
+    - I have indigestion
+    - I am having indigestion
+    - I have indigestion
+    - I am suffering from indigestion
+    - I am suffering with indigestion
+    - upset stomach
+    - digestive discomfort
+    - stomach pain
+    - bloating
+    - heartburn
+    - stomach ache
+    - indigestion symptoms
+    - indigestion treatment
+    - how to treat indigestion
+    - remedies for indigestion
+    - causes of indigestion
+    - what causes indigestion
+    - managing indigestion
+    - chronic indigestion
+    - severe indigestion
+    - indigestion
+
+- intent: diarrhoea
+  examples: |
+    - i have diarrhoea
+    - i am having diarrhoea
+    - i  amm suffering from diarrhoea
+    - i am suffering with diarrhoea
+    - diarrhoea
+
+- intent: kidney_stones
+  examples: |
+    - kidney stones
+    - i am having kidney stones
+    - i have kidney stones
+    - i am suffering fromm kidney stones
+    - i am suffering with kidney stones
+    - kidneystones
+
+- intent: leg_cramps
+  examples: |
+    - leg cramps
+    - kallanoppulu
+    - kalla noppulu
+    - i have leg cramps
+    - i am having leg cramps
+    - i am sufferin with leg cramps
+    - i am suffering from leg cramps
+    - legcramps
+
+- intent: migraine
+  examples: |
+    - I am having migraine
+    - I have migraine
+    - severe headache
+    - migraine attack
+    - migraine pain
+    - migraine symptoms
+    - migraine treatment
+    - how to treat migraine
+    - remedies for migraine
+    - migraine
+
+- intent: obesity
+  examples: |
+    - I am having obesity
+    - I have obesity
+    - overweight
+    - excessive weight
+    - weight problem
+    - obesity issue
+    - obesity problem
+    - obesity symptoms
+    - obesity
+
+- intent: tooth_decay
+  examples: |
+    - toothdecay
+    - I am having tooth decay
+    - I have tooth decay
+    - tooth decay
+    - cavities
+    - dental caries
+    - decayed teeth
+    - decaying teeth
+    - dental decay
+
+- intent: ulcer
+  examples: |
+    - i am  having ulcer
+    - ulcer
+    - i have ulcer
+
+- intent: vomiting
+  examples: |
+    - vomiting
+    - i am having vomiting
+    - i have vomiting
+    - vomiting
+
+- intent: restless_leg_syndrome
+  examples: |
+    - restlesslegsyndrome
+    - i have restless leg syndrome
+    - i have restless syndrome
+    - restless leg syndrome
+    
+
+- intent: sore_throat
+  examples: |
+    - sore throat
+    - i have sore throat
+    - i am having sore throat
+    - sore throat
+
+- intent: stomach_ache
+  examples: |
+    - i am having stomach ache
+    - i have stomach ache
+    - stomach ache
+
+
+- intent: tooth_ache
+  examples: |
+    - toothache
+    - i am having tooth ache
+    - tooth ache
+
+- intent: anxiety
+  examples: |
+    - i have anxiety
+    - i am having anxiety
+    - i am suffering from anxiety
+    - i am suffering with anxiety
+    - anxiety
+
+- intent: calculate_bmi
+  examples: |
+    - My weight is [70](weight) kg and my height is [1.75](height) meters.
+    - Calculate my BMI with a weight of [85](weight) kg and height of [1.80](height) meters.
+    - I weigh [90](weight) kilograms and my height is [1.65](height) meters.
+
+- intent: request_health_news
+  examples: |
+    - i want news on [headache](health_problem) in [telangana](location)
+    - i want news on [fever](health_problem) in [telangana](location)
+    - i want news on [cancer](health_problem) in [telangana](location)
+    - give me some news on [low bp](health_problem) in [telangana](location)
+    - tell me about latest news on [insomnia](health_problem) in [telangana](location)

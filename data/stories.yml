@@ -1,0 +1,309 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+
+- story: how to use
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: list of problems
+  steps:
+  - intent: list_of_problems
+  - action: utter_list_of_problems
+
+- story: what can you do
+  steps:
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+
+- story: no symptom
+  steps:
+  - intent: no_symptom
+  - action: utter_no_symptom
+
+- story: solution true
+  steps:
+  - intent: solution_true
+  - action: utter_solution_true
+
+- story: information correct
+  steps:
+  - intent: information_correct
+  - action: utter_information_correct
+
+- story: side effects
+  steps:
+  - intent: side_effects
+  - action: utter_side_effects
+
+- story: created by
+  steps:
+  - intent: created_by
+  - action: utter_created_by
+
+- story: uses
+  steps:
+  - intent: uses
+  - action: utter_uses
+
+- story: how are you
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+
+- story: fine
+  steps:
+  - intent: fine
+  - action: utter_fine
+
+- story: not fine
+  steps:
+  - intent: not_fine
+  - action: utter_not_fine
+
+- story: chicken pox
+  steps:
+  - intent: chicken_pox
+  - action: utter_chicken_pox
+
+- story: cough
+  steps:
+  - intent: cough
+  - action: utter_cough
+
+- story: wet cough
+  steps:
+  - intent: wet_cough
+  - action: utter_wet_cough
+
+- story: dry cough
+  steps:
+  - intent: dry_cough
+  - action: utter_dry_cough
+
+- story: low concentration
+  steps:
+  - intent: low_concentration
+  - action: utter_low_concentration
+
+- story: arid
+  steps:
+  - intent: arid
+  - action: utter_arid
+
+- story: eye cancer
+  steps:
+  - intent: eye_cancer
+  - action: utter_eye_cancer
+
+- story: food poisoning
+  steps:
+  - intent: food_poisoning
+  - action: utter_food_poisoning
+
+- story: fly
+  steps:
+  - intent: flu
+  - action: utter_flu
+
+- story: fever
+  steps:
+  - intent: fever
+  - action: utter_fever
+
+- story: yellow fever
+  steps:
+  - intent: yellow_fever
+  - action: utter_yellow_fever
+
+- story: whooping cough
+  steps:
+  - intent: whooping_cough
+  - action: utter_whooping_cough
+
+- story: folate deficiency anemia
+  steps:
+  - intent: folate_deficiency_anemia
+  - action: utter_folate_deficiency_anemia
+
+- story: hypoglycemia1
+  steps:
+  - intent: hypoglycemia
+  - action: utter_hypoglycemia
+
+- story: high cholesterol
+  steps:
+  - intent: high_cholesterol
+  - action: utter_high_cholesterol
+
+- story: high bp
+  steps:
+  - intent: high_bp
+  - action: utter_high_bp
+
+- story: hyperhydrosis1
+  steps:
+  - intent: hyperhydrosis
+  - action: utter_hyperhydrosis
+
+- story: huntington1
+  steps:
+  - intent: huntington
+  - action: utter_huntington
+
+- story: hearing loss
+  steps:
+  - intent: hearing_loss
+  - action: utter_hearing_loss
+
+- story: sleeplessness1
+  steps:
+  - intent: sleeplessness
+  - action: utter_sleeplessness
+
+- story: iron deficiency anemia
+  steps:
+  - intent: iron_deficiency_anemia
+  - action: utter_iron_deficiency_anemia
+
+- story: bone cancer
+  steps:
+  - intent: bone_cancer
+  - action: utter_bone_cancer
+
+- story: bronchitis1
+  steps:
+  - intent: bronchitis
+  - action: utter_bronchitis
+
+- story: kidney disease
+  steps:
+  - intent: kidney_disease
+  - action: utter_kidney_disease
+
+- story: constipation1
+  steps:
+  - intent: constipation
+  - action: utter_constipation
+
+- story: dehydration1
+  steps:
+  - intent: dehydration
+  - action: utter_dehydration
+
+- story: head ache
+  steps:
+  - intent: headache
+  - action: utter_headache
+
+- story: indigestion1
+  steps:
+  - intent: indigestion
+  - action: utter_indigestion
+
+- story: diarrhoea1
+  steps:
+  - intent: diarrhoea
+  - action: utter_diarrhoea
+
+- story: kidney stones
+  steps:
+  - intent: kidney_stones
+  - action: utter_kidney_stones
+
+- story: leg cramps
+  steps:
+  - intent: leg_cramps
+  - action: utter_leg_cramps
+
+- story: migraine1
+  steps:
+  - intent: migraine
+  - action: utter_migraine
+
+- story: obesity1
+  steps:
+  - intent: obesity
+  - action: utter_obesity
+
+- story: tooth decay
+  steps:
+  - intent: tooth_decay
+  - action: utter_tooth_decay
+
+- story: ulcer1
+  steps:
+  - intent: ulcer
+  - action: utter_ulcer
+
+- story: vomiting1
+  steps:
+  - intent: vomiting
+  - action: utter_vomiting
+
+- story: restless leg syndrome
+  steps:
+  - intent: restless_leg_syndrome
+  - action: utter_restless_leg_syndrome
+
+- story: sore throat
+  steps:
+  - intent: sore_throat
+  - action: utter_sore_throat
+
+- story: stomach ache
+  steps:
+  - intent: stomach_ache
+  - action: utter_stomach_ache
+
+- story: tooth ache
+  steps:
+  - intent: tooth_ache
+  - action: utter_tooth_ache
+
+- story: anxiety1
+  steps:
+  - intent: anxiety
+  - action: utter_anxiety
+
+
+- story: BMI calculation
+  steps:
+  - intent: calculate_bmi
+  - action: action_calculate_bmi
+
+- story: Fetch health news
+  steps:
+    - intent: request_health_news
+    - action: action_fetch_health_news
