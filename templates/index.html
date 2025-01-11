@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthBot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .chat-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .chat-header {
+            background-color: #008080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        .chat-header .dark-mode-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+        .daily-tip {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+        #chat-widget-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 1.2rem;
+        }
+        .chat-footer {
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+        }
+        .chat-footer input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .chat-footer button {
+            margin-left: 5px;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+            position: relative;
+        }
+        .message strong {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .message .timestamp {
+            font-size: 0.8rem;
+            color: gray;
+            position: absolute;
+            bottom: -0.5px;
+            right: 10px;
+        }
+        .message.user {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .message.bot {
+            background-color: #e2e3e5;
+            color: #383d41;
+            align-self: flex-start;
+            text-align: left;
+        }
+        .loading-spinner {
+            display: none;
+        }
+        body.dark-mode {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        body.dark-mode .chat-container {
+            background-color: #495057;
+        }
+        body.dark-mode .chat-header,
+        body.dark-mode .daily-tip,
+        body.dark-mode .chat-footer {
+            background-color: #343a40;
+        }
+        body.dark-mode .chat-header {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-header">
+        Web Based Health Care Chat Bot
+        <i class="bi bi-moon-fill dark-mode-toggle"></i>
+    </div>
+    <div class="daily-tip">
+        <!-- Tip will be inserted here -->
+    </div>
+    <div id="chat-widget-messages">
+        <!---------- Chat messages will append here ---->
+    </div>
+    <div class="chat-footer">
+        <input type="text" class="form-control" id="chat-widget-input" placeholder="Describe your symptoms or ask a health-related question...">
+        <button id="send-button" class="btn btn-primary">Send</button>
+        <button id="loading-spinner" class="spinner-border text-primary loading-spinner" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </button>
+    </div>
+</div>
+
+<script>
+$(document).ready(function () {
+    const tips = [
+        "Drink plenty of water to stay hydrated.",
+        "Take short breaks every hour while working.",
+        "Eat a balanced diet with plenty of fruits and vegetables.",
+        "Exercise regularly to maintain physical fitness.",
+        "Get enough sleep to recharge your body and mind."
+    ];
+
+    function getDailyTip() {
+        const date = new Date();
+        const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+        return tips[dayOfYear % tips.length];
+    }
+
+    $('.daily-tip').text(getDailyTip());
+
+    function appendMessage(sender, message) {
+        const timestamp = new Date().toLocaleTimeString();
+        let messageClass = sender === "You" ? "user" : "bot";
+        $("#chat-widget-messages").append(`<div class="message ${messageClass}"><strong>${sender}:</strong> ${message}<span class="timestamp">${timestamp}</span></div>`);
+        $("#chat-widget-messages").scrollTop($("#chat-widget-messages")[0].scrollHeight);
+
+        if (sender === "Bot") {
+            speakText(message);
+        }
+    }
+
+    function toggleLoadingSpinner(show) {
+        if (show) {
+            $("#loading-spinner").show();
+        } else {
+            $("#loading-spinner").hide();
+        }
+    }
+
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 1;
+
+            // Ensure voices are loaded
+            let voices = window.speechSynthesis.getVoices();
+            if (voices.length === 0) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    voices = window.speechSynthesis.getVoices();
+                    selectFemaleVoice(utterance, voices);
+                    window.speechSynthesis.speak(utterance);
+                };
+            } else {
+                selectFemaleVoice(utterance, voices);
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+    }
+
+    function selectFemaleVoice(utterance, voices) {
+        for (let voice of voices) {
+            if (voice.name.includes("Google UK English Female") || voice.name.includes("Microsoft Zira") || voice.gender === "female") {
+                utterance.voice = voice;
+                break;
+            }
+        }
+    }
+
+    $("#send-button").on("click", function () {
+        let userMessage = $("#chat-widget-input").val().trim();
+        if (userMessage !== "") {
+            $("#chat-widget-input").val("");
+            appendMessage("You", userMessage);
+            toggleLoadingSpinner(true);
+
+            $.ajax({
+                type: "POST",
+                url: "/webhook",
+                contentType: "application/json",
+                data: JSON.stringify({ message: userMessage }),
+                success: function (data) {
+                    toggleLoadingSpinner(false);
+                    let botResponse = data.response;
+                    appendMessage("Bot", botResponse);
+                },
+                error: function () {
+                    toggleLoadingSpinner(false);
+                    appendMessage("Bot", "Sorry, something went wrong.");
+                }
+            });
+        }
+    });
+
+    $("#chat-widget-input").keypress(function (event) {
+        if (event.which === 13) {
+            $("#send-button").click();
+        }
+    });
+
+    function toggleDarkMode() {
+        $("body").toggleClass("dark-mode");
+    }
+
+    $(".dark-mode-toggle").on("click", toggleDarkMode);
+});
+</script>
+</body>
+</html>
